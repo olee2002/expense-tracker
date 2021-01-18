@@ -6,7 +6,7 @@ function Header() {
          Expense Report
          <a
             className='footer'
-            href='https://my-expense-report.netlify.app/'
+            href='https://github.com/olee2002/expense-tracker'
             target='_blank'
             title='GitHub'>
             [
