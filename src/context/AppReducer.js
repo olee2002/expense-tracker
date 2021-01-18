@@ -1,15 +1,16 @@
 export default (draft, action) => {
+   let state = {}
    switch (action.type) {
       case 'DELETE_TRANSACTION':
          draft.transactions = draft.transactions.filter(
             (transaction) => transaction.id !== action.payload
          )
-         return null
+         return
 
       case 'ADD_TRANSACTION':
          draft.transactions = [...draft.transactions, action.payload]
-         return null
+         return
       default:
-         return draft
+         return state;
    }
 }
