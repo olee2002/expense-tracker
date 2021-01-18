@@ -3,7 +3,7 @@ import { GlobalContext } from '../context/GlobalState'
 
 const AddTransaction = () => {
    const [text, setText] = useState('')
-   const [amount, setAmount] = useState(0)
+   const [amount, setAmount] = useState('')
 
    const { addTransaction, dispatch } = useContext(GlobalContext)
 
@@ -26,6 +26,7 @@ const AddTransaction = () => {
                <label htmlFor='text'>Text</label>
                <input
                   type='text'
+                  data-testid='textInput'
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                   placeholder='Enter text...'
@@ -38,12 +39,15 @@ const AddTransaction = () => {
                </label>
                <input
                   type='number'
+                  data-testid='numInput'
                   value={amount}
                   onChange={(e) => setAmount(e.target.value)}
                   placeholder='Enter amount...'
                />
             </div>
-            <button className='btn'>Add transaction</button>
+            <button className='btn' data-testid='submit'>
+               Add transaction
+            </button>
          </form>
       </>
    )
