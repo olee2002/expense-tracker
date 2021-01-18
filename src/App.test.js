@@ -1,8 +1,22 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from '@testing-library/react'
+import { GlobalProvider } from './context/GlobalState'
+import App from './App'
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe('Expense report test', () => {
+   beforeEach(() => {
+      render(
+         <GlobalProvider>
+            <App />
+         </GlobalProvider>
+      )
+   })
+   it('renders title - Expense Report', () => {
+      const title = screen.getByText(/Expense Report/i)
+      expect(title).toBeInTheDocument()
+   })
+
+   it('renders balance - YOUR BALANCE', () => {
+      const balance = screen.getByText(/YOUR BALANCE/i)
+      expect(balance).toBeInTheDocument()
+   })
+})
