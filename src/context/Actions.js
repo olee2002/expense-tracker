@@ -1,6 +1,4 @@
 
-
-
 //Actions
 export const deleteTransaction = (id) => (dispatch) => {
    dispatch({
