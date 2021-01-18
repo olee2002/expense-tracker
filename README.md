@@ -2,7 +2,7 @@
 Open [https://my-expense-report.netlify.app/](https://my-expense-report.netlify.app/) to view it in the browser.
 
 <p>
-<img src="https://github.com/olee2002/expense-tracker/blob/master/public/images/expense-app.png" width="600">
+<img src="https://github.com/olee2002/expense-tracker/blob/master/public/images/expense-app.png" width="400">
 </p>
 
 ## Available Scripts
