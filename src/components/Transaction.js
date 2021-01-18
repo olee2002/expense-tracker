@@ -3,7 +3,7 @@ import { GlobalContext } from '../context/GlobalState'
 import { moneyFormatter } from '../utils/index'
 
 const Transaction = ({ transaction }) => {
-   const { deleteTransaction } = useContext(GlobalContext)
+   const { deleteTransaction, dispatch } = useContext(GlobalContext)
 
    const sign = transaction.amount < 0 ? '-' : '+'
 
@@ -15,7 +15,7 @@ const Transaction = ({ transaction }) => {
             {moneyFormatter(transaction.amount)}
          </span>
          <button
-            onClick={() => deleteTransaction(transaction.id)}
+            onClick={() => deleteTransaction(transaction.id)(dispatch)}
             className='delete-btn'>
             x
          </button>

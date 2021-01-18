@@ -5,7 +5,7 @@ const AddTransaction = () => {
    const [text, setText] = useState('')
    const [amount, setAmount] = useState(0)
 
-   const { addTransaction } = useContext(GlobalContext)
+   const { addTransaction, dispatch } = useContext(GlobalContext)
 
    const onSubmit = (e) => {
       e.preventDefault()
@@ -15,7 +15,7 @@ const AddTransaction = () => {
          text,
          amount: +amount,
       }
-      addTransaction(newTransaction)
+      addTransaction(newTransaction)(dispatch)
    }
 
    return (
